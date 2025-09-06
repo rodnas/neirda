@@ -1,0 +1,62 @@
+<html>
+<HEAD>
+<title>Main</title>
+<script type="text/javascript" src="js/smalltype.js"></script>
+<script language="JavaScript">
+	var specifyimage=new Array(); 
+	specifyimage[0]="images/public/image1.jpg";
+	specifyimage[1]="images/public/image2.jpg";
+	specifyimage[2]="images/public/image3.jpg";
+	specifyimage[3]="images/public/image4.jpg";
+//Picture Cube slideshow - By Tony Foster III
+//Modifications by JK
+//Visit JavaScript Kit (http://javascriptkit.com) for script
+
+var delay=4000 //2 seconds
+
+//Counter for array 
+var count =1;
+
+var cubeimage=new Array()
+for (i=0;i<specifyimage.length;i++)
+	{
+	cubeimage[i]=new Image()
+	cubeimage[i].src=specifyimage[i]
+}
+
+function movecube()
+{
+	if (window.createPopup)
+		cube.filters[0].apply()
+	document.images.cube.src=cubeimage[count].src;
+	if (window.createPopup)
+		cube.filters[0].play()
+	count++;
+	if (count==cubeimage.length)
+		count=0;
+	setTimeout("movecube()",delay)
+}
+
+</SCRIPT>
+<script type="text/javascript" src="js/public.js"></script>
+<script language="JavaScript">
+	window.onload=new Function("setTimeout('movecube()',delay)");
+</SCRIPT>
+</HEAD>
+<BODY background="images/public/background/bg1.jpg" vLink=#0000ff bgColor=#ffffff>
+<script language="JavaScript">toptop("logo.gif","head.gif","logo.gif");</script>
+<SCRIPT language="JavaScript">mainmenu(true);</script>
+<tr><td align="center">
+<iframe src="stat.php" marginwidth=0 marginheight=0 hspace=0 vspace=0 width="0" height="0" frameborder=0 name="stat"></iframe>
+</td></tr>
+<tr><td align="center">
+<table>
+<tr><td height="20"></td></tr>
+<tr><td align="center" valign="top">
+<img src="images/public/image1.jpg" name="cube"  border=0 style="filter:progid:DXImageTransform.Microsoft.Stretch(stretchStyle='PUSH')">
+</td></tr>
+</table>
+</td></td>
+<script language="JavaScript">bottombottom();</script>
+</body>
+</html>
